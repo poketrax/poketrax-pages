@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Kdam+Thmor+Pro&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title-font{
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}

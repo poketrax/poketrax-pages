@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import icon from "./assets/icon.png"
-import ui from "./assets/ui.png"
+import movie from "./assets/poketrax-intro.mp4"
 import macOs from "./assets/macos.png"
 import win from "./assets/windows.png"
 import ubuntu from "./assets/ubuntu.png"
@@ -13,7 +13,7 @@ import mac_sys_pref from "./assets/macos_sys_pref.png"
 import mac_sec from "./assets/macos_sec.png"
 import sets from "./assets/sets.png"
 import trackCollection from "./assets/track_collection.png"
-import { BsGithub } from 'react-icons/bs'
+import { BsGithub, BsReddit, BsYoutube } from 'react-icons/bs'
 
 class State {
   public page = "features"
@@ -37,12 +37,16 @@ export class App extends Component<{}, State>{
         <span className="text-white text-4xl title-font cursor-pointer" onClick={() => { this.setState({ ...this.state, page: "features" }) }}>Pokétrax</span>
         <div className="w-96"></div>
         <div className="text-white hover:text-red-600 cursor-pointer"
-          onClick={() => { this.setState({ ...this.state, page: "features" }) }}>Features</div>
-        <div className="w-4"></div>
-        <div className="text-white hover:text-red-600 cursor-pointer"
           onClick={() => { this.setState({ ...this.state, page: "install" }) }}>Install Instructions</div>
         <div className="w-4"></div>
-        <a href="https://github.com/poketrax/PokeTrax"><BsGithub className="w-6 h-6" /></a>
+        <a className="text-white hover:text-red-600 cursor-pointer"
+          href="https://github.com/poketrax/PokeTrax/issues">Issues</a>
+        <div className="w-4"></div>
+        <a href="https://github.com/poketrax/PokeTrax"><BsGithub className="w-6 h-6 text-white" /></a>
+        <div className="w-4"></div>
+        <a href="https://www.reddit.com/r/poketraxapp/"><BsReddit className="w-6 h-6 text-white" /></a>
+        <div className="w-4"></div>
+        <a href="https://www.youtube.com/channel/UCDGebTpvhiRCy3Aw6_CDylg"><BsYoutube className="w-6 h-6 text-white" /></a>
         <div className="flex-grow"></div>
       </div>
     )
@@ -69,7 +73,11 @@ export class App extends Component<{}, State>{
             <div className="flex-grow"></div>
           </div>
           <div className="h-10"></div>
-          <img className="h-96 object-contain" src={ui}></img>
+          <div className="h-[500px]">
+            <video className="h-full" autoPlay={true} controls={false} loop={true}>
+              <source src={movie} type="video/mp4"></source>
+            </video>
+          </div>
         </div>
         <div className="flex-grow"></div>
       </div>
@@ -162,14 +170,14 @@ export class App extends Component<{}, State>{
         </div>
         <div className="w-screen">
           {this.iBlank("1", (<div>Download nsi from <a className="text-blue-600" href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.nsi">here</a></div>))}
-          {this.iPicture("2", "You will get an error that looks like this. Click \'More Info\'", (<img src={window_warning}/>))}
-          {this.iPicture("3", "Click 'Run anyway'", (<img src={windows_accept}/>))}
+          {this.iPicture("2", "You will get an error that looks like this. Click \'More Info\'", (<img src={window_warning} />))}
+          {this.iPicture("3", "Click 'Run anyway'", (<img src={windows_accept} />))}
         </div>
       </div>
     )
   }
 
-  private macos(){
+  private macos() {
     return (
       <div>
         <div className="flex w-screen h-20 bg-gray-200 items-center">
@@ -178,10 +186,10 @@ export class App extends Component<{}, State>{
         </div>
         <div className="w-screen">
           {this.iBlank("1", (<div>Download dmg from <a className="text-blue-600" href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.dmg">here</a> and install PokeTrax</div>))}
-          {this.iPicture("2", "Run PokeTrax you will get the following error. Click 'Cancel'", (<img src={mac_open_err}/>))}
-          {this.iPicture("3", "Click the Apple logo at the top left of you screen, Then click 'System Preferences'", (<img src={mac_open_sys_pref}/>))}
-          {this.iPicture("4", "On the system preferences window. Click 'Security & Privacy'", (<img src={mac_sys_pref}/>))}
-          {this.iPicture("5", "On the General Tab in the 'Security & Privacy' window. Click 'Open Anyway'", (<img src={mac_sec}/>))}
+          {this.iPicture("2", "Run PokeTrax you will get the following error. Click 'Cancel'", (<img src={mac_open_err} />))}
+          {this.iPicture("3", "Click the Apple logo at the top left of you screen, Then click 'System Preferences'", (<img src={mac_open_sys_pref} />))}
+          {this.iPicture("4", "On the system preferences window. Click 'Security & Privacy'", (<img src={mac_sys_pref} />))}
+          {this.iPicture("5", "On the General Tab in the 'Security & Privacy' window. Click 'Open Anyway'", (<img src={mac_sec} />))}
         </div>
       </div>
     )
@@ -203,6 +211,7 @@ export class App extends Component<{}, State>{
         {this.titleBar()}
         {this.state.page === "features" && this.features()}
         {this.state.page === "install" && this.install()}
+        <div> </div>
       </div>
     )
   }

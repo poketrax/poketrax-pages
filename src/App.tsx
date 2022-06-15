@@ -67,7 +67,7 @@ export class App extends Component<{}, State>{
             <div className="flex-grow"></div>
             <a href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.dmg"><img className="h-20 object-contain cursor-pointer" src={macOs} /></a>
             <div className="w-6"></div>
-            <a href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.nsi"><img className="h-20 object-contain cursor-pointer" src={win} /></a>
+            <a href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.exe"><img className="h-20 object-contain cursor-pointer" src={win} /></a>
             <div className="w-6"></div>
             <a href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.snap"><img className="h-20 object-contain cursor-pointer" src={ubuntu} /></a>
             <div className="flex-grow"></div>

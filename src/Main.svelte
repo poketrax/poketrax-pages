@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Title from "../components/Title.svelte";
-    import macOs from "../assets/brands/macos.png";
-    import win from "../assets/brands/windows.png";
-    import ubuntu from "../assets/brands/ubuntu.png";
-    import trackPrices from "../assets/track_prices.png";
-    import sets from "../assets/sets.png";
-    import trackCollection from "../assets/track_collection.png";
+    import Title from "./lib/Title.svelte";
+    import macOs from "./assets/brands/macos.png";
+    import win from "./assets/brands/windows.png";
+    import ubuntu from "./assets/brands/ubuntu.png";
+    import trackPrices from "./assets/track_prices.png";
+    import sets from "./assets/sets.png";
+    import trackCollection from "./assets/track_collection.png";
 
     let links = [
         {

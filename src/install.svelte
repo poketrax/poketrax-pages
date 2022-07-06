@@ -1,14 +1,14 @@
 <script lang="ts">
-    import InstallStep from "./../components/InstallStep.svelte";
-    import Title from "../components/Title.svelte";
-    import macOs from "../assets/brands/macos.png";
-    import win from "../assets/brands/windows.png";
-    import window_warning from "../assets/install/windows/windows_warning.png";
-    import windows_accept from "../assets/install/windows/windows_accept.png";
-    import mac_open_err from "../assets/install/macos/macos_open_err.png";
-    import mac_open_sys_pref from "../assets/install/macos/macos_open_sys_pref.png";
-    import mac_sys_pref from "../assets/install/macos/macos_sys_pref.png";
-    import mac_sec from "../assets/install/macos/macos_sec.png";
+    import InstallStep from "./lib/InstallStep.svelte";
+    import Title from "./lib/Title.svelte";
+    import macOs from "./assets/brands/macos.png";
+    import win from "./assets/brands/windows.png";
+    import window_warning from "./assets/install/windows/windows_warning.png";
+    import windows_accept from "./assets/install/windows/windows_accept.png";
+    import mac_open_err from "./assets/install/macos/macos_open_err.png";
+    import mac_open_sys_pref from "./assets/install/macos/macos_open_sys_pref.png";
+    import mac_sys_pref from "./assets/install/macos/macos_sys_pref.png";
+    import mac_sec from "./assets/install/macos/macos_sec.png";
 
     let links = [
         {

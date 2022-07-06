@@ -1,10 +1,10 @@
 <script lang="ts">
   import icon from "../assets/icon.png";
-  import Github from "../components/Github.svelte";
-  import Reddit from "../components/Reddit.svelte";
-  import Youtube from "../components/Youtube.svelte";
-  import Twitter from "../components/Twitter.svelte";
-  import { Link } from "../lib/Link";
+  import Github from "./Github.svelte";
+  import Reddit from "./Reddit.svelte";
+  import Youtube from "./Youtube.svelte";
+  import Twitter from "./Twitter.svelte";
+  import type { Link } from "./Link";
 
   export let links: Link[];
 </script>
@@ -23,20 +23,17 @@
     </a>
     <div class="w-4" />
   {/each}
-  <a href="https://github.com/poketrax/PokeTrax">
+  <div class="flex-grow" />
+  <a class="p-2" href="https://github.com/poketrax/PokeTrax">
     <Github/>
   </a>
-  <div class="w-4" />
-  <a href="https://www.reddit.com/r/poketraxapp/">
+  <a class="p-2" href="https://www.reddit.com/r/poketraxapp/">
     <Reddit/>
   </a>
-  <div class="w-4" />
-  <a href="https://www.youtube.com/channel/UCDGebTpvhiRCy3Aw6_CDylg">
+  <a class="p-2" href="https://www.youtube.com/channel/UCDGebTpvhiRCy3Aw6_CDylg">
     <Youtube/>
   </a>
-  <div class="w-4" />
-  <a href="https://twitter.com/poketrax_app">
+  <a class="p-2" href="https://twitter.com/poketrax_app">
     <Twitter/>
   </a>
-  <div class="flex-grow" />
 </div>

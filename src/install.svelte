@@ -10,6 +10,8 @@
     import mac_sys_pref from "./assets/install/macos/macos_sys_pref.png";
     import mac_sec from "./assets/install/macos/macos_sec.png";
 
+    let base = ""
+
     let links = [
         {
             name: "Issues",

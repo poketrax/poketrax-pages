@@ -2,12 +2,13 @@
   import { Router, Route } from "svelte-routing";
   import Main from "./Main.svelte";
   import Install from "./Install.svelte";
-  export let url = "";
+  let basepath = "/poketrax-pages/"
+  let url = "";
 </script>
 
-<Router {url}>
+<Router url={url} basepath={basepath}>
   <div>
-    <Route path="install">
+    <Route path="install" >
       <Install />
     </Route>
     <Route path="/">

@@ -1,0 +1,112 @@
+<script lang="ts">
+    import Title from "../components/Title.svelte";
+    import macOs from "../assets/brands/macos.png";
+    import win from "../assets/brands/windows.png";
+    import ubuntu from "../assets/brands/ubuntu.png";
+    import trackPrices from "../assets/track_prices.png";
+    import sets from "../assets/sets.png";
+    import trackCollection from "../assets/track_collection.png";
+
+    let links = [
+        {
+            name: "Issues",
+            link: "https://github.com/poketrax/PokeTrax/issues",
+        },
+        {
+            name: "Install",
+            link: "./install",
+        },
+    ];
+</script>
+
+<Title {links} />
+
+<div class="w-screen flex">
+    <div class="flex-grow" />
+    <div>
+        <div class="h-10" />
+        <div class="flex text-3xl flex-col items-center w-[60rem] text-center">
+            A simple, free, fully featured, and open source Pokémon TCG collection manager for Windows, Mac, and Ubuntu
+        </div>
+        <div class="h-10" />
+        <div class="flex">
+            <div class="flex-grow" />
+            <a
+                href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.dmg"
+                ><img
+                    class="h-20 object-contain cursor-pointer"
+                    src={macOs}
+                    alt="macos"
+                />
+            </a>
+            <div class="w-6" />
+            <a
+                href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.exe"
+                ><img
+                    class="h-20 object-contain cursor-pointer"
+                    src={win}
+                    alt="win"
+                /></a
+            >
+            <div class="w-6" />
+            <a
+                href="https://github.com/poketrax/PokeTrax/releases/latest/download/poketrax.snap"
+                ><img
+                    class="h-20 object-contain cursor-pointer"
+                    src={ubuntu}
+                    alt="linux"
+                />
+            </a>
+            <div class="flex-grow" />
+        </div>
+        <div class="h-10" />
+        <iframe
+            width="960"
+            height="540"
+            src="https://www.youtube.com/embed/IG4EF-xuJho?autoplay=1&vq=hd720"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        />
+    </div>
+    <div class="flex-grow" />
+</div>
+<div class="h-12" />
+
+<div class="flex w-screen bg-gray-200 items-center">
+    <div class="p-16">
+        <img src={trackPrices} class="h-96 object-contain" alt="track prices" />
+    </div>
+    <div class="text-3xl">Analyze card prices over time</div>
+    <div class="flex-grow" />
+</div>
+
+<div class="flex w-screen items-center">
+    <div class="flex-grow" />
+    <div class="text-3xl">
+        Track cards and sealed products in your collection
+    </div>
+    <div class="p-16">
+        <img
+            src={trackCollection}
+            class="h-96 object-contain"
+            alt="track cards"
+        />
+    </div>
+</div>
+
+<div class="flex w-screen bg-gray-200 items-center">
+    <div class="p-16">
+        <img src={sets} class="h-96 object-contain" alt="sets" />
+    </div>
+    <div class="w-8" />
+    <div class="text-3xl">Browse sets for cards</div>
+    <div class="flex-grow" />
+</div>
+
+<style lang="postcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+</style>

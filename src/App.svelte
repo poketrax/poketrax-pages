@@ -1,9 +1,20 @@
 <script lang="ts">
-  import Main from "./Main.svelte"
+  import { Router, Route } from "svelte-routing";
+  import Main from "./Main.svelte";
+  import Install from "./Install.svelte";
+  export let url = "";
 </script>
 
-<Main/>
+<Router {url}>
+  <div>
+    <Route path="install">
+      <Install />
+    </Route>
+    <Route path="/">
+      <Main />
+    </Route>
+  </div>
+</Router>
 
 <style>
-
 </style>

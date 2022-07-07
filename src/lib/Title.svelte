@@ -5,6 +5,7 @@ import Github from "./Github.svelte";
 import Reddit from "./Reddit.svelte";
 import Youtube from "./Youtube.svelte";
 import Twitter from "./Twitter.svelte";
+import ChartIcon from "./ChartIcon.svelte";
 
 function gotoInstall() {
   page.set("install")
@@ -13,6 +14,9 @@ function gotoInstall() {
 </script>
 
 <div class="h-16 w-screen bg-blue-800 flex items-center">
+    
+    <ChartIcon/>
+
     <div class="flex-grow" />
     <img class="h-16 w-16 portrait:h-10 portrait:w-10" src={icon} alt="icon" />
     <div class="w-4" />
@@ -49,4 +53,5 @@ function gotoInstall() {
         <Twitter />
     </a>
     <div class="flex-grow" />
+    <ChartIcon/>
 </div>

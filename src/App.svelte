@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Metrics from './Metrics.svelte';
   import { page } from "./lib/store";
   import Title from "./lib/Title.svelte";
   import Main from "./Main.svelte";
@@ -19,6 +20,10 @@
 
 {#if pageValue === "install"}
   <Install/>
+{/if}
+
+{#if pageValue === "metrics"}
+  <Metrics/>
 {/if}
 
 <style global lang="postcss">

@@ -12,9 +12,11 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
+    "@carbon/charts-svelte": "^1.3.2",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@tsconfig/svelte": "^2.0.1",
     "autoprefixer": "^10.4.7",
+    "d3": "^7.6.1",
     "postcss": "^8.4.14",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
@@ -25,6 +27,8 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "layercake": "^6.1.1",
+    "node-fetch": "^3.2.6",
     "svelte-routing": "^1.6.0"
   }
 }

@@ -1,21 +1,28 @@
 <script lang="ts">
-  import { Router, Route } from "svelte-routing";
+  import { page } from "./lib/store";
+  import Title from "./lib/Title.svelte";
   import Main from "./Main.svelte";
   import Install from "./Install.svelte";
-  let basepath = "/poketrax-pages/"
-  let url = "";
+
+  let pageValue: string;
+
+  page.subscribe(value => {
+    pageValue = value
+  })
 </script>
 
-<Router url={url} basepath={basepath}>
-  <div>
-    <Route path="install" >
-      <Install />
-    </Route>
-    <Route path="/">
-      <Main />
-    </Route>
-  </div>
-</Router>
+<Title />
 
-<style>
+{#if pageValue === "main"}
+  <Main/>
+{/if}
+
+{#if pageValue === "install"}
+  <Install/>
+{/if}
+
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>

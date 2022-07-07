@@ -1,25 +1,13 @@
 <script lang="ts">
-    import Title from "./lib/Title.svelte";
+    import Disclaimer from "./lib/Disclaimer.svelte";
     import macOs from "./assets/brands/macos.png";
     import win from "./assets/brands/windows.png";
     import ubuntu from "./assets/brands/ubuntu.png";
     import trackPrices from "./assets/track_prices.png";
     import sets from "./assets/sets.png";
     import trackCollection from "./assets/track_collection.png";
-
-    let links = [
-        {
-            name: "Issues",
-            link: "https://github.com/poketrax/PokeTrax/issues",
-        },
-        {
-            name: "Install",
-            link: "./install",
-        },
-    ];
 </script>
 
-<Title {links} />
 <div class="w-screen h-[calc(100vh-4rem)] overflow-x-hidden overflow-auto">
     <div class="w-screen flex">
         <div class="flex-grow" />
@@ -113,10 +101,6 @@
         <div class="text-3xl portrait:text-xl portrait:m-4">Browse sets for cards</div>
         <div class="flex-grow" />
     </div>
-</div>
 
-<style lang="postcss">
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-</style>
+    <Disclaimer/>
+</div>

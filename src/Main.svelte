@@ -6,6 +6,21 @@
     import trackPrices from "./assets/track_prices.png";
     import sets from "./assets/sets.png";
     import trackCollection from "./assets/track_collection.png";
+
+    let version = "";
+    let fresh = false;
+
+    fetch("https://api.github.com/repos/poketrax/poketrax/releases/latest")
+        .then((res) => res.json())
+        .then((data) => {
+            version = data.name;
+            let now = new Date(Date.now())
+            let week = new Date(now.getFullYear(), now.getMonth(), now.getDate()-7);
+            let release = new Date(data.published_at)
+            if(week.getTime() < release.getTime()){
+                fresh = true
+            }
+        });
 </script>
 
 <div class="w-screen h-[calc(100vh-4rem)] overflow-x-hidden overflow-auto">
@@ -13,9 +28,7 @@
         <div class="flex-grow" />
         <div>
             <div class="h-10" />
-            <span
-                class="flex text-3xl portrait:text-xl text-center p-4"
-            >
+            <span class="flex text-3xl portrait:text-xl text-center p-4">
                 A simple, free, fully featured, and open source Pokémon TCG
                 collection manager for Windows, Mac, and Ubuntu
             </span>
@@ -50,7 +63,12 @@
                 </a>
                 <div class="flex-grow" />
             </div>
-            <div class="h-10" />
+            <div class="flex h-10 items-center justify-center">
+                {#if fresh}
+                <span class="mr-2 text-yellow-300">🔆</span>
+                {/if}
+                <span>{version}</span>
+            </div>
             <div class="flex">
                 <div class="flex-grow" />
                 <iframe
@@ -75,7 +93,9 @@
                 alt="track prices"
             />
         </div>
-        <div class="text-3xl portrait:text-xl portrait:m-4">Analyze card prices over time</div>
+        <div class="text-3xl portrait:text-xl portrait:m-4">
+            Analyze card prices over time
+        </div>
         <div class="flex-grow" />
     </div>
 
@@ -95,12 +115,18 @@
 
     <div class="flex w-screen bg-gray-200 items-center">
         <div class="p-16">
-            <img src={sets} class="h-96 portrait:h-48 object-contain" alt="sets" />
+            <img
+                src={sets}
+                class="h-96 portrait:h-48 object-contain"
+                alt="sets"
+            />
         </div>
         <div class="w-8" />
-        <div class="text-3xl portrait:text-xl portrait:m-4">Browse sets for cards</div>
+        <div class="text-3xl portrait:text-xl portrait:m-4">
+            Browse sets for cards
+        </div>
         <div class="flex-grow" />
     </div>
 
-    <Disclaimer/>
+    <Disclaimer />
 </div>

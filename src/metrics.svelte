@@ -10,16 +10,27 @@
             let stats = [];
             for (let i = data.length - 1; i >= 0; i--) {
                 let tag = data[i];
-                let count = tag.assets[0].download_count
-                stats.push(
-                    {
+                let count = tag.assets[0].download_count;
+                let found = stats.find((val) => {
+                    let valDate = new Date(val.date)
+                    valDate.setHours(0,0,0,0)
+                    let currDate = new Date(tag.published_at)
+                    currDate.setHours(0,0,0,0)
+                    return valDate.getTime() === currDate.getTime()
+                })
+                
+                if(found){
+                    
+                    found.count += count
+                }else{
+                    stats.push({
                         date: tag.published_at,
                         count: count,
-                        group: "Users"
-                    }
-                )
+                        group: "Users",
+                    });
+                }
+                    
             }
-            console.log(`stats: ${stats}`);
             activeData.set(stats);
         });
 
